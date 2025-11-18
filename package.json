@@ -1,5 +1,5 @@
 {
-  "name": "quill-monorepo",
+  "name": "@arktisstudio/quill",
   "version": "2.0.3",
   "description": "Quill development environment",
   "private": true,
