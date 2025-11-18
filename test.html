@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Test Quill</title>
+
+    <!-- Styles Quill -->
+    <link href="http://localhost:3000/quill.arktis.css" rel="stylesheet" />
+
+    <link href="https://github.com/ArktisStudio/quill-better-table/releases/download/master/quill-better-table.css" rel="stylesheet">
+
+    <style>
+        #editor {
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+<h1>Test Quill</h1>
+<div id="editor">Hello Quill!</div>
+
+<script src="http://localhost:3000/quill.js"></script>
+<script>
+    // Force global Quill
+    if (!window.Quill && typeof Quill !== "undefined") {
+        window.Quill = Quill;
+    }
+</script>
+<script src="https://github.com/ArktisStudio/quill-better-table/releases/download/master/quill-better-table.js"></script>
+<script>
+    const QuillBetterTable = window.QuillBetterTable || window["quill-better-table"];
+
+    console.log(Quill)
+    // Register properly
+    Quill.register({ "modules/better-table": QuillBetterTable }, true);
+
+    const quill = new Quill("#editor", {
+        theme: "arktis",
+        table: false,
+        modules: {
+            "better-table": {
+                operationMenu: {
+                    items: {
+                        unmergeCells: { text: "Another unmerge cells name" }
+                    }
+                }
+            }
+        }
+    });
+</script>
+
+</body>
+</html>

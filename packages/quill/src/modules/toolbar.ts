@@ -72,6 +72,7 @@ class Toolbar extends Module<ToolbarProps> {
   }
 
   attach(input: HTMLElement) {
+    input.classList.add('ql-toolbar-button')
     let format = Array.from(input.classList).find((className) => {
       return className.indexOf('ql-') === 0;
     });

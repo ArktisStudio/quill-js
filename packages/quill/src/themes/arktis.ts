@@ -17,7 +17,7 @@ const TOOLBAR_CONFIG: ToolbarConfig = [
   ['clean'],
 ];
 
-class SnowTooltip extends BaseTooltip {
+class ArktisTooltip extends BaseTooltip {
   static TEMPLATE = [
     '<a class="ql-preview" rel="noopener noreferrer" target="_blank" href="about:blank"></a>',
     '<input type="text" data-formula="e=mc^2" data-link="https://quilljs.com" data-video="Embed URL">',
@@ -95,7 +95,7 @@ class SnowTooltip extends BaseTooltip {
   }
 }
 
-class SnowTheme extends BaseTheme {
+class ArktisTheme extends BaseTheme {
   constructor(quill: Quill, options: ThemeOptions) {
     if (
       options.modules.toolbar != null &&
@@ -104,16 +104,16 @@ class SnowTheme extends BaseTheme {
       options.modules.toolbar.container = TOOLBAR_CONFIG;
     }
     super(quill, options);
-    this.quill.container.classList.add('ql-snow');
+    this.quill.container.classList.add('ql-arktis');
   }
 
   extendToolbar(toolbar: Toolbar) {
     if (toolbar.container != null) {
-      toolbar.container.classList.add('ql-snow');
+      toolbar.container.classList.add('ql-arktis');
       this.buildButtons(toolbar.container.querySelectorAll('button'), icons);
       this.buildPickers(toolbar.container.querySelectorAll('select'), icons);
       // @ts-expect-error
-      this.tooltip = new SnowTooltip(this.quill, this.options.bounds);
+      this.tooltip = new ArktisTooltip(this.quill, this.options.bounds);
       if (toolbar.container.querySelector('.ql-link')) {
         this.quill.keyboard.addBinding(
           { key: 'k', shortKey: true },
@@ -125,7 +125,7 @@ class SnowTheme extends BaseTheme {
     }
   }
 }
-SnowTheme.DEFAULTS = merge({}, BaseTheme.DEFAULTS, {
+ArktisTheme.DEFAULTS = merge({}, BaseTheme.DEFAULTS, {
   modules: {
     toolbar: {
       handlers: {
@@ -152,4 +152,4 @@ SnowTheme.DEFAULTS = merge({}, BaseTheme.DEFAULTS, {
   },
 } satisfies ThemeOptions);
 
-export default SnowTheme;
+export default ArktisTheme;

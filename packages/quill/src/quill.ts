@@ -49,6 +49,7 @@ import Tooltip from './ui/tooltip.js';
 
 import BubbleTheme from './themes/bubble.js';
 import SnowTheme from './themes/snow.js';
+import ArktisTheme from './themes/arktis';
 
 Quill.register(
   {
@@ -105,6 +106,7 @@ Quill.register(
 
     'themes/bubble': BubbleTheme,
     'themes/snow': SnowTheme,
+    'themes/arktis': ArktisTheme,
 
     'ui/icons': Icons,
     'ui/picker': Picker,

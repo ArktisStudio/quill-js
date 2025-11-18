@@ -28,7 +28,8 @@
     "build:website": "npm run build -w website",
     "start": "run-p start:*",
     "start:quill": "npm start -w quill",
-    "start:website": "NEXT_PUBLIC_LOCAL_QUILL=true npm start -w website",
+    "start:website": "cross-env NEXT_PUBLIC_LOCAL_QUILL=true npm start -w website",
+    "dev": "cross-env PORT=$npm_package_config_ports_website next dev",
     "lint": "npm run lint -ws"
   },
   "keywords": [
